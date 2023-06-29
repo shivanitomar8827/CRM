@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Note</title>
+</head>
+<body>
+  <hr>
+<table >
+    <thead >
+        <tr>
+            <th>User</th>
+            <th>Note</th>
+            
+
+            <th>Note Type</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr class="click-row">
+            <td>{{ user.user }}</td>
+            <td>{{ user.text_note }}</td>
+
+            <td>{{ user.call_type }}</td>
+
+            <td>
+              
+              
+               <a href="{% url 'delete_note' note_id=user.id %}">Delete</a>
+              
+               
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
